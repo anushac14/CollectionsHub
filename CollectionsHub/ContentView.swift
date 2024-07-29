@@ -7,7 +7,9 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(folderManager.folders) { folder in
-                    Text(folder.name)
+                    NavigationLink(destination: FolderDetailView(folderManager: folderManager, folder: folder)) {
+                        Text(folder.name)
+                    }
                 }
                 .onDelete { indexSet in
                     let idsToDelete = indexSet.map { folderManager.folders[$0].id }
@@ -59,4 +61,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-

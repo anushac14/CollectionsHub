@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		031D11122C577D8C00FEE555 /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D11112C577D8C00FEE555 /* SupabaseManager.swift */; };
 		031D11132C577D8C00FEE555 /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D11112C577D8C00FEE555 /* SupabaseManager.swift */; };
+		0349E9632C58179E006D4435 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349E9622C58179E006D4435 /* Link.swift */; };
+		0349E9642C58179E006D4435 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349E9622C58179E006D4435 /* Link.swift */; };
+		0349E9662C5817C6006D4435 /* FolderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349E9652C5817C6006D4435 /* FolderDetailView.swift */; };
+		0349E9672C5817C6006D4435 /* FolderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349E9652C5817C6006D4435 /* FolderDetailView.swift */; };
 		036B3EE42C57CEF100207C3A /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 036B3EE32C57CEF100207C3A /* Auth */; };
 		036B3EE62C57CEF100207C3A /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 036B3EE52C57CEF100207C3A /* Functions */; };
 		036B3EE82C57CEF100207C3A /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 036B3EE72C57CEF100207C3A /* PostgREST */; };
@@ -75,6 +79,8 @@
 
 /* Begin PBXFileReference section */
 		031D11112C577D8C00FEE555 /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SupabaseManager.swift; path = Share/SupabaseManager.swift; sourceTree = SOURCE_ROOT; };
+		0349E9622C58179E006D4435 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		0349E9652C5817C6006D4435 /* FolderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailView.swift; sourceTree = "<group>"; };
 		038437EC2C5810E8002F386F /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		0385167D2C56392C00A90EA7 /* CollectionsHub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CollectionsHub.entitlements; sourceTree = "<group>"; };
 		0385167E2C56395800A90EA7 /* Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Share.entitlements; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 		031D11102C577D5C00FEE555 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0349E9652C5817C6006D4435 /* FolderDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				038437EC2C5810E8002F386F /* Folder.swift */,
+				0349E9622C58179E006D4435 /* Link.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,9 +431,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				03D2F6D22C4E484100439FE7 /* ContentView.swift in Sources */,
+				0349E9662C5817C6006D4435 /* FolderDetailView.swift in Sources */,
 				03D2F6D02C4E484100439FE7 /* CollectionsHubApp.swift in Sources */,
 				031D11122C577D8C00FEE555 /* SupabaseManager.swift in Sources */,
 				038437ED2C5810E8002F386F /* Folder.swift in Sources */,
+				0349E9632C58179E006D4435 /* Link.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +462,9 @@
 			files = (
 				031D11132C577D8C00FEE555 /* SupabaseManager.swift in Sources */,
 				03D2F7002C4E497400439FE7 /* ShareViewController.swift in Sources */,
+				0349E9672C5817C6006D4435 /* FolderDetailView.swift in Sources */,
 				038437EE2C5810E8002F386F /* Folder.swift in Sources */,
+				0349E9642C58179E006D4435 /* Link.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
