@@ -1,61 +1,62 @@
-//
-//  ContentView.swift
-//  CollectionsHub
-//
-//  Created by Anusha Chinthamaduka on 7/22/24.
-//
-
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Query private var allItems: [ImageItem]
+    @StateObject private var folderManager = SupabaseManager()
+    
     var body: some View {
-        NavigationStack {
-            ScrollView(.vertical) {
-                LazyVStack(spacing: 15) {
-                    ForEach (allItems) { item in
-                        CardView(item:item)
-                            .frame(height: 250)
-                        
-                    }
-                    
+        NavigationView {
+            List {
+                ForEach(folderManager.folders) { folder in
+                    Text(folder.name)
                 }
-                .padding(15)
-            }
-            .navigationTitle("Favorites")
-        }
-    }
-}
-
-struct CardView: View {
-    var item: ImageItem
-    @State private var previewImage: UIImage?
-    var body: some View {
-        GeometryReader {
-            let size = $0.size
-            
-            if let previewImage {
-                Image(uiImage: previewImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: size.width, height: size.height)
-            } else {
-                ProgressView()
-                    .frame(width: size.width, height: size.height)
-                    .task {
-                        Task.detached(priority: .high) {
-                            let thumbnail = await UIImage(data: item.data)?.byPreparingThumbnail(ofSize: size)
-                            await MainActor.run {
-                                previewImage = thumbnail
-                            }
-                        }
+                .onDelete { indexSet in
+                    let idsToDelete = indexSet.map { folderManager.folders[$0].id }
+                    idsToDelete.forEach { id in
+                        folderManager.deleteFolder(id: id)
                     }
+                }
             }
+            .navigationTitle("Folders")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: showAddFolderAlert) {
+                        Label("Add Folder", systemImage: "plus")
+                    }
+                }
+            }
+            .onAppear {
+                Task {
+                    await folderManager.fetchFolders()
+                }
+            }
+        }
+    }
+    
+    private func showAddFolderAlert() {
+        if let rootViewController = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first?.windows
+            .first?.rootViewController {
+            let alert = UIAlertController(title: "New Folder", message: "Enter folder name:", preferredStyle: .alert)
+            alert.addTextField { textField in
+                textField.placeholder = "Folder name"
+            }
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { _ in
+                if let folderName = alert.textFields?.first?.text, !folderName.isEmpty {
+                    folderManager.addFolder(name: folderName)
+                }
+            }))
+            
+            rootViewController.present(alert, animated: true)
         }
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
+

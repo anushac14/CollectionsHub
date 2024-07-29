@@ -13,6 +13,5 @@ struct CollectionsHubApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: ImageItem.self)
     }
 }
