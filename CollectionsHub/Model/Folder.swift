@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct Folder: Decodable, Identifiable {
+struct Folder: Decodable, Identifiable, Equatable {
     let id: UUID
     let name: String
 }
