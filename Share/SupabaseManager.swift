@@ -7,7 +7,6 @@ class SupabaseManager: ObservableObject {
     @Published var links: [Link] = []
 
     init() {
-        // create as enviornment variables
         self.client = SupabaseClient(supabaseURL: URL(string: "https://gpvmwqfevyfykdcfgpxb.supabase.co")!, supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdwdm13cWZldnlmeWtkY2ZncHhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjIyMzYxOTEsImV4cCI6MjAzNzgxMjE5MX0.9ql5yfBE431ipBLCucrGflUUu98Ku__kz5aTRAg6eao")
         Task {
             await fetchFolders()
@@ -38,7 +37,7 @@ class SupabaseManager: ObservableObject {
                     .from("folders")
                     .insert(["name": name])
                     .execute()
-                await fetchFolders()
+                await fetchFolders() // Refresh the folder list
             } catch {
                 print("Failed to add folder: \(error)")
             }
@@ -53,7 +52,7 @@ class SupabaseManager: ObservableObject {
                     .delete()
                     .eq("id", value: 1)
                     .execute()
-                await fetchFolders()
+                await fetchFolders() // Refresh the folder list
             } catch {
                 print("Failed to delete folder: \(error)")
             }
