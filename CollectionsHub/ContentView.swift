@@ -18,7 +18,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("Folders")
+            .navigationTitle("Folders") //folders
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: showAddFolderAlert) {

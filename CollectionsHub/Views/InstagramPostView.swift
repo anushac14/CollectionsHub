@@ -10,7 +10,6 @@ struct InstagramPostView: UIViewRepresentable {
         webView.configuration.mediaTypesRequiringUserActionForPlayback = []
         webView.scrollView.isScrollEnabled = false
         
-        // Set the custom user agent
         webView.customUserAgent = "CustomUserAgent/1.0"
         
         return webView

@@ -8,7 +8,6 @@ struct FolderDetailView: View {
         ScrollView {
             VStack(spacing: 20) {
                 ForEach(folderManager.links) { link in
-                    // Ensure the link is a valid URL and append "/embed/"
                     if let originalUrl = URL(string: link.link),
                        let embedUrl = URL(string: originalUrl.absoluteString + "/embed/") {
                         VStack(alignment: .leading) {
