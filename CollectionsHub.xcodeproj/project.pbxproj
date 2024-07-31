@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03025D322C58E32B001BC363 /* FolderSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03025D312C58E32B001BC363 /* FolderSelectionViewController.swift */; };
+		03025D332C58E32B001BC363 /* FolderSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03025D312C58E32B001BC363 /* FolderSelectionViewController.swift */; };
 		031D11122C577D8C00FEE555 /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D11112C577D8C00FEE555 /* SupabaseManager.swift */; };
 		031D11132C577D8C00FEE555 /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D11112C577D8C00FEE555 /* SupabaseManager.swift */; };
 		0349E9632C58179E006D4435 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349E9622C58179E006D4435 /* Link.swift */; };
@@ -37,6 +39,8 @@
 		03D2F7002C4E497400439FE7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F6FF2C4E497400439FE7 /* ShareViewController.swift */; };
 		03D2F7032C4E497400439FE7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F7022C4E497400439FE7 /* Base */; };
 		03D2F7072C4E497400439FE7 /* Share.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 03D2F6FD2C4E497400439FE7 /* Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		03D946542C59FC370001D1E8 /* InstagramPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D946532C59FC370001D1E8 /* InstagramPostView.swift */; };
+		03D946552C59FC370001D1E8 /* InstagramPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D946532C59FC370001D1E8 /* InstagramPostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03025D312C58E32B001BC363 /* FolderSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSelectionViewController.swift; sourceTree = "<group>"; };
 		031D11112C577D8C00FEE555 /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SupabaseManager.swift; path = Share/SupabaseManager.swift; sourceTree = SOURCE_ROOT; };
 		0349E9622C58179E006D4435 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		0349E9652C5817C6006D4435 /* FolderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailView.swift; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 		03D2F6FF2C4E497400439FE7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		03D2F7022C4E497400439FE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		03D2F7042C4E497400439FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03D946532C59FC370001D1E8 /* InstagramPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramPostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				0349E9652C5817C6006D4435 /* FolderDetailView.swift */,
+				03D946532C59FC370001D1E8 /* InstagramPostView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,6 +253,7 @@
 				03D2F6FF2C4E497400439FE7 /* ShareViewController.swift */,
 				03D2F7012C4E497400439FE7 /* MainInterface.storyboard */,
 				03D2F7042C4E497400439FE7 /* Info.plist */,
+				03025D312C58E32B001BC363 /* FolderSelectionViewController.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -431,11 +439,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				03D2F6D22C4E484100439FE7 /* ContentView.swift in Sources */,
+				03D946542C59FC370001D1E8 /* InstagramPostView.swift in Sources */,
 				0349E9662C5817C6006D4435 /* FolderDetailView.swift in Sources */,
 				03D2F6D02C4E484100439FE7 /* CollectionsHubApp.swift in Sources */,
 				031D11122C577D8C00FEE555 /* SupabaseManager.swift in Sources */,
 				038437ED2C5810E8002F386F /* Folder.swift in Sources */,
 				0349E9632C58179E006D4435 /* Link.swift in Sources */,
+				03025D322C58E32B001BC363 /* FolderSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +471,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				031D11132C577D8C00FEE555 /* SupabaseManager.swift in Sources */,
+				03025D332C58E32B001BC363 /* FolderSelectionViewController.swift in Sources */,
+				03D946552C59FC370001D1E8 /* InstagramPostView.swift in Sources */,
 				03D2F7002C4E497400439FE7 /* ShareViewController.swift in Sources */,
 				0349E9672C5817C6006D4435 /* FolderDetailView.swift in Sources */,
 				038437EE2C5810E8002F386F /* Folder.swift in Sources */,

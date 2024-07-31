@@ -79,3 +79,18 @@ class SupabaseManager: ObservableObject {
         case fetchFailed
     }
 }
+
+extension SupabaseManager {
+    func addLink(_ link: Link) async throws {
+        do {
+            try await client
+                .from("links")
+                .insert(link)
+                .execute()
+        } catch {
+            print("Failed to add link: \(error)")
+            throw error
+        }
+    }
+}
+
