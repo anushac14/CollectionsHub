@@ -1,6 +1,3 @@
-//  FolderDetailView.swift
-//  CollectionsHub
-
 import SwiftUI
 
 struct FolderDetailView: View {
@@ -8,8 +5,23 @@ struct FolderDetailView: View {
     var folder: Folder
 
     var body: some View {
-        List(folderManager.links) { link in
-            Text(link.link)
+        ScrollView {
+            VStack(spacing: 20) {
+                ForEach(folderManager.links) { link in
+                    // Ensure the link is a valid URL and append "/embed/"
+                    if let originalUrl = URL(string: link.link),
+                       let embedUrl = URL(string: originalUrl.absoluteString + "/embed/") {
+                        VStack(alignment: .leading) {
+                            InstagramPostView(url: embedUrl)
+                                .frame(height: 700)
+                        }
+                    } else {
+                        Text("Invalid URL")
+                            .foregroundColor(.red)
+                    }
+                }
+            }
+            .padding()
         }
         .navigationTitle(folder.name)
         .onAppear {
